@@ -1,6 +1,11 @@
-import { Tabs, TabsList, TabsContent} from '@chakra-ui/react'
+import { Tabs, TabsList } from '@chakra-ui/react'
+import { ReactNode } from 'react'
 
-export default function EventTabs(props: any) {
+interface EventTabsProps {
+  children: ReactNode
+}
+
+export default function EventTabs( { children, ...props }: EventTabsProps ) {
     return (
         <Tabs.Root defaultValue="All Events" variant="plain" p={3} {...props}>
             <TabsList gap="4" justifyContent={"center"} border="none" mt={8} mb={4} flexWrap={"wrap"}>
@@ -51,15 +56,7 @@ export default function EventTabs(props: any) {
                 </Tabs.Trigger>
 
             </TabsList>
-            <Tabs.Content value="All Events">
-                <h3>Displaying All Events ...</h3>
-            </Tabs.Content>
-            <Tabs.Content value="Upcoming">
-                <h3>Displaying Upcoming Events ...</h3>
-            </Tabs.Content>
-            <Tabs.Content value="Past">
-                <h3>Displaying Past Events ...</h3>
-            </Tabs.Content>
+            {children}
         </Tabs.Root>
 
     );
