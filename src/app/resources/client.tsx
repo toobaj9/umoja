@@ -6,7 +6,9 @@ import ResourceDetailCard from "../../components/ResourceDetailCard/ResourceDeta
 import { Box, Container, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function ResourceClient({ resourceContent }: any) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedResource, setSelectedResource] = useState<any | null>(null);
   return (
     <Container maxW="container.lg" py={{ base: 16, md: 24 }}>
@@ -22,6 +24,7 @@ export default function ResourceClient({ resourceContent }: any) {
           onResourceOpen={(resource) => setSelectedResource(resource)}
           columns={{ base: 1, sm: 2, md: 3 }}
           maxHeight="400px"
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           renderCard={(resource: any) => (
             <ResourceCard
               title={resource.title}
